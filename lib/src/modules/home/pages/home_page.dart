@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:reative_template_app_flutter/src/modules/home/widgets/custom_device_button.dart';
 import 'package:reative_template_app_flutter/src/modules/home/widgets/error_feedback_container.dart';
@@ -90,13 +92,19 @@ class _HomePageState extends State<HomePage> {
                                       Theme.of(context).textTheme.displayLarge,
                                 ),
                               if (state.pageInformation.templateNumber == 2)
-                                // TODO: Realizar alteração da imagem
                                 SizedBox(
                                   width:
                                       MediaQuery.of(context).size.width / 1.5,
-                                  child: Image.asset(
-                                    state.pageInformation.imageFilePath,
-                                  ),
+                                  child: state.pageInformation.imageFilePath ==
+                                          'assets/images/show_up_logo.png'
+                                      ? Image.asset(
+                                          state.pageInformation.imageFilePath,
+                                        )
+                                      : Image.memory(
+                                          base64Decode(
+                                            state.pageInformation.imageFilePath,
+                                          ),
+                                        ),
                                 ),
                               const SizedBox(height: 20),
                               CustomDeviceButton(
