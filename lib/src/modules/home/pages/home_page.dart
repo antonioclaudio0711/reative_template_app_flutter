@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:reative_template_app_flutter/src/modules/home/widgets/custom_device_button.dart';
 import 'package:reative_template_app_flutter/src/modules/home/widgets/error_feedback_container.dart';
 import 'package:reative_template_app_flutter/src/modules/home/widgets/reload_icon_button.dart';
@@ -88,8 +89,13 @@ class _HomePageState extends State<HomePage> {
                               if (state.pageInformation.templateNumber == 1)
                                 Text(
                                   'ShowUp',
-                                  style:
-                                      Theme.of(context).textTheme.displayLarge,
+                                  style: GoogleFonts.getFont(
+                                    appStore.separateWords(
+                                      state.pageInformation
+                                          .fontStyleFamilyString,
+                                    ),
+                                    textStyle: const TextStyle(fontSize: 50),
+                                  ),
                                 ),
                               if (state.pageInformation.templateNumber == 2)
                                 SizedBox(

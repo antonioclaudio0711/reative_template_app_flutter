@@ -20,4 +20,14 @@ class AppStore extends ValueNotifier<AppState> {
       value = ErrorAppState(e.toString());
     }
   }
+
+  String separateWords(String textFontStyleWithoutSpaces) {
+    String result = textFontStyleWithoutSpaces.replaceAllMapped(
+      RegExp(r'(?<!^)(?=[A-Z])'),
+      (Match m) {
+        return ' ${m.group(0)!}';
+      },
+    );
+    return result;
+  }
 }

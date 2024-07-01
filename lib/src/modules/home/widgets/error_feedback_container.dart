@@ -17,7 +17,7 @@ class ErrorFeedbackContainer extends StatelessWidget {
     final AppColors appColors = AppColors();
     return Center(
       child: Container(
-        height: MediaQuery.of(context).size.height / 7,
+        height: MediaQuery.of(context).size.height / 5,
         margin: const EdgeInsets.only(left: 40, right: 40),
         padding: const EdgeInsets.only(left: 40, right: 40),
         decoration: BoxDecoration(

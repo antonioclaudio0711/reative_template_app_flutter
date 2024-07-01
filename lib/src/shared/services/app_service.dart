@@ -10,7 +10,7 @@ class AppService {
   Future<PageInformationModel> fetchPageInformation() async {
     final url = Uri.parse(appUrls.serverUrl);
 
-    final response = await http.get(url).timeout(const Duration(seconds: 7));
+    final response = await http.get(url);
     final pageInformation = PageInformationModel.fromJson(response.body);
     return pageInformation;
   }
